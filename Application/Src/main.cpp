@@ -38,8 +38,8 @@ void assert_failed(const uint8_t* expr, const uint8_t* file, uint32_t line)
 
 /** 任务堆栈大小 */
 #define START_TASK_SIZE 				64  
-#define RECURSION_TASK_SIZE 		128
-#define STACKCHECK_TASK_SIZE 		128
+#define RECURSION_TASK_SIZE 		64
+#define STACKCHECK_TASK_SIZE 		64
 
 /** 初始任务句柄 */
 TaskHandle_t Start_Task_Handler;
@@ -58,7 +58,7 @@ RCC_ClocksType rcc_clock;//获取时钟分频情况
  */
 int main(void)
 {
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//中断分组设置
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);//中断分组设置
 	RCC_GetClocksFreqValue(&rcc_clock);//获取时钟树的时钟频率（拿来看看）
 	NZ_Delay_init();//时钟初始化
 	xTaskCreate((TaskFunction_t )start_task,            //任务函数
