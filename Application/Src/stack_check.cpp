@@ -22,7 +22,7 @@ void recursion(uint32_t tick);
  * @param pvParameters：任务参数，无
  * @note  这个任务会递归的调用函数，以此不断的增加任务栈使用情况
  */
-void recursion_task(void *xTasks)
+void recursion_task(void *pvParameters)
 {
 	recursion(5);
 	recursion(10);

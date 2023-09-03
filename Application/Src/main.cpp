@@ -31,15 +31,12 @@ void assert_failed(const uint8_t* expr, const uint8_t* file, uint32_t line)
 
 
 
-/** 任务优先级 */
+/** 开始任务优先级 */
 #define START_TASK_PRIO					1
-#define RECURSION_TASK_PRIO			2
-#define STACKCHECK_TASK_PRIO		2
 
-/** 任务堆栈大小 */
+/** 开始任务堆栈大小 */
 #define START_TASK_SIZE 				64  
-#define RECURSION_TASK_SIZE 		64
-#define STACKCHECK_TASK_SIZE 		64
+
 
 /** 初始任务句柄 */
 TaskHandle_t Start_Task_Handler;

@@ -13,6 +13,13 @@ extern "C" {
 #endif
 
 #include "n32g45x.h"
+//任务堆栈大小
+#define RECURSION_TASK_SIZE 		64
+#define STACKCHECK_TASK_SIZE 		64
+	
+//任务优先级
+#define RECURSION_TASK_PRIO			2
+#define STACKCHECK_TASK_PRIO		2
 void stackcheck_task(void *pvParameters);
 void recursion_task(void *xTasks);
 #ifdef __cplusplus
