@@ -66,24 +66,6 @@ void recursion(uint32_t tick)
 	recursion(tick);
 	return;
 }
-
-
-
-#if configCHECK_FOR_STACK_OVERFLOW != 0
-bool overflowed = false;
-/**
- * @brief 堆栈溢出错误处理钩子函数
- * @param xTask：任务句柄，pcTaskName：任务名称
- * @note  某个任务堆栈溢出的时候会触发
- */
-void vApplicationStackOverflowHook( TaskHandle_t xTask,char * pcTaskName )
-{
-	while(1)
-	{		
-		overflowed = true;
-	}
-}
-#endif
 /**
  * @}
  */

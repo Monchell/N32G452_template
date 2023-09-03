@@ -556,6 +556,13 @@
         </Group>
         <Group>
           <GroupName>Middleware</GroupName>
+          <Files>
+            <File>
+              <FileName>overflow_check.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middleware\Src\overflow_check.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Application</GroupName>
