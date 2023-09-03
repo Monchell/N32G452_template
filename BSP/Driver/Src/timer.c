@@ -7,7 +7,7 @@
  
  
 /**
-* @brief Tim2配置成计数器
+* @brief Tim2配置成计数器，这只是一个例子，在模板中并未使用
 * @note  Tim2配置成了1ms进一次中断，向上计数，1000装载值，1000hz。
 */
 
@@ -126,6 +126,18 @@ void NZ_Delay_xms(u32 nms)
 {
 		u32 i;
 		for(i=0;i<nms;i++) NZ_Delay_us(1000);  
+}
+
+/**
+ * @brief  This function handles SysTick Handler.
+ */
+extern void xPortSysTickHandler(void);
+void SysTick_Handler(void)
+{
+	if(xTaskGetSchedulerState()!=taskSCHEDULER_NOT_STARTED)// 系统已经运行
+	{
+		xPortSysTickHandler();
+	}
 }
 
 

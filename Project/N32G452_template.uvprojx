@@ -545,11 +545,6 @@
           <GroupName>BSP/Driver</GroupName>
           <Files>
             <File>
-              <FileName>n32g45x_it.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middleware\Src\n32g45x_it.c</FilePath>
-            </File>
-            <File>
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\Driver\Src\timer.c</FilePath>
