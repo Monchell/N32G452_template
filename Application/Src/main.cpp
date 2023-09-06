@@ -12,7 +12,7 @@
 #include "timer.h"
 #include "FreeRTOS.h"
 #include "task.h"
-#include "stack_check.h"
+#include "example_task.h"
 
 
 /**
@@ -73,19 +73,12 @@ void start_task(void *pvParameters)
 {
     taskENTER_CRITICAL();           //进入临界区
     //创建LED0任务
-    xTaskCreate((TaskFunction_t )recursion_task,     	
-                (const char*    )"recursion_task",   	
-                (uint16_t       )RECURSION_TASK_SIZE,
+    xTaskCreate((TaskFunction_t )example_task,     	
+                (const char*    )"example_task",   	
+                (uint16_t       )EXAMPLE_TASK_SIZE,
                 (void*          )NULL,				
-                (UBaseType_t    )RECURSION_TASK_PRIO,	
-                (TaskHandle_t*  )&Recursion_Task_Handler);   
-								
-    xTaskCreate((TaskFunction_t )stackcheck_task,     	
-                (const char*    )"stackcheck_task",   	
-                (uint16_t       )STACKCHECK_TASK_SIZE, 
-                (void*          )&Recursion_Task_Handler,				
-                (UBaseType_t    )STACKCHECK_TASK_PRIO,	
-                (TaskHandle_t*  )&Stackcheck_Task_Handler);   
+                (UBaseType_t    )EXAMPLE_TASK_PRIO,	
+                (TaskHandle_t*  )&Recursion_Task_Handler);   								   
 								
     vTaskDelete(Start_Task_Handler); //删除开始任务
     taskEXIT_CRITICAL();            //退出临界区

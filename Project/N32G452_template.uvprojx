@@ -573,9 +573,9 @@
               <FilePath>..\Application\Src\main.cpp</FilePath>
             </File>
             <File>
-              <FileName>stack_check.cpp</FileName>
+              <FileName>example_tack.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>..\Application\Src\stack_check.cpp</FilePath>
+              <FilePath>..\Application\Src\example_tack.cpp</FilePath>
             </File>
           </Files>
         </Group>
